@@ -11,7 +11,7 @@ const persistConfig = {
 export const persistedReducer = persistReducer(persistConfig, tasksReducer)
 export const store = configureStore({
   reducer: {
-    tasks: persistedReducer,
+   addedTasks: persistedReducer,
   }
 })
 

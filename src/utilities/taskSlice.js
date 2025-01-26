@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice, nanoid} from "@reduxjs/toolkit";
 
 const taskSlice = createSlice({
   name: "tasks",
@@ -7,7 +7,8 @@ const taskSlice = createSlice({
   },
   reducers: {
     storeTask: (state, action) => {
-        state.tasks.push(action.payload);
+      const task = {id: nanoid(), task: action.payload};
+        state.tasks.push(task);
     },
     deleteTask: (state, action) => {},
 
